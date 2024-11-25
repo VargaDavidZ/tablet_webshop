@@ -57,18 +57,18 @@ export function MainPage() {
             <div className="container mainBody">
                 <MainMenu></MainMenu>
 
-      
-                    <div className="row">
+
+                <div className="row">
                     {tablets.map((t) => (
                         <div className="col-sm-4" >{Card(t)}</div>
 
                     ))}
-                    </div>
-                    
-
                 </div>
 
-    
+
+            </div>
+
+
 
 
         </>
