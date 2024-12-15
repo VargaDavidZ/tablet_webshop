@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { login } from '../api';
 import { useNavigate } from 'react-router-dom';
+import { MainMenu } from './menuComp';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -18,7 +19,10 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+
+    <div className="mainBody container">
+      <MainMenu></MainMenu>
+<form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <input
         type="text"
@@ -34,6 +38,11 @@ function Login() {
       />
       <button type="submit">Login</button>
     </form>
+    </div>
+
+
+
+    
   );
 }
 

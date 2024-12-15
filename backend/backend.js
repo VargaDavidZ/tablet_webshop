@@ -264,11 +264,11 @@ app.post('/logout', (req, res) => {
 });
 
 // Privát végpont, csak bejelentkezett felhasználóknak
-app.get('/protected', (req, res) => {
+app.get('/profil', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
-  res.json({ message: `Welcome, ${req.session.user.username}` });
+  res.json({ message: `${req.session.user.username}` });
 });
 
 

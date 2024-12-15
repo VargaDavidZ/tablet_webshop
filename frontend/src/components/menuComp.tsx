@@ -32,6 +32,18 @@ export function MainMenu() {
                                 <a className="nav-link active" aria-current="page" href="/cart">Kosár</a>
                             </li>
 
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/login">Bejelentkezés</a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/register">Regisztráció</a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/profil">Profil</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

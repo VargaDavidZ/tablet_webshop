@@ -14,6 +14,7 @@ import Login from './components/loginComp.tsx';
 import Protected from './components/protected.tsx';
 import Logout from './components/logoutComp.tsx';
 import { Cart } from './components/cartComp.tsx';
+import { Profil } from './components/profilComp.tsx';
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path:"/cart",
     element: <Cart/>
+  },
+  {
+    path:"/profil",
+    element: <Profil/>
   }
 ]);
 

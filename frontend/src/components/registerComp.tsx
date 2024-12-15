@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { register } from '../api';
 import { useNavigate } from 'react-router-dom';
+import { MainMenu } from './menuComp';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -18,7 +19,9 @@ function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='mainBody container' >
+      <MainMenu></MainMenu>
+ <form onSubmit={handleSubmit}>
       <h2>Register</h2>
       <input
         type="text"
@@ -34,6 +37,8 @@ function Register() {
       />
       <button type="submit">Register</button>
     </form>
+    </div>
+   
   );
 }
 

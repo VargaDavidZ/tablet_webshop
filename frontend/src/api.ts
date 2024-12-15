@@ -42,7 +42,7 @@ interface ApiResponse {
   };
   
   export const fetchProtected = async (): Promise<ApiResponse> => {
-    const response = await fetch(`${API_URL}/tablets`, {
+    const response = await fetch(`${API_URL}/profil`, {
       method: 'GET',
       credentials: 'include',
     });
