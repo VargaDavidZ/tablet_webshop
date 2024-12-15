@@ -137,6 +137,43 @@ app.delete('/tablets/:tabletId', async (req, res) => {
 })
 
 
+
+app.delete('/cart/:tabletId', async (req, res) => {
+  try {
+      let tabletId = parseInt(req.params.tabletId);
+      const [rows, fields] = await db.query('DELETE FROM cart WHERE id =?', [tabletId]);
+      if (rows.length === 0) {
+          res.status(404).json({ error: "Tablet not found" });
+      } else {
+          res.status(200).json({ message: "Tablet successfully removed" });
+      }
+
+  } catch (error) {
+      console.error(`Error retrieving tablets ${error}`);
+      res.status(500).json({ error: "Internal Server Error" });
+  }
+})
+
+
+
+
+app.delete('/cart', async (req, res) => {
+  try {
+      let tabletId = parseInt(req.params.tabletId);
+      const [rows, fields] = await db.query('TRUNCATE TABLE cart');
+      if (rows.length === 0) {
+          res.status(404).json({ error: "cart not found" });
+      } else {
+          res.status(200).json({ message: "cart successfully emptied" });
+      }
+
+  } catch (error) {
+      console.error(`Error retrieving tablets ${error}`);
+      res.status(500).json({ error: "Internal Server Error" });
+  }
+})
+
+
 // Session beállítások MySQL-ben tárolva
 app.use(session({
   key: 'session_cookie_name',

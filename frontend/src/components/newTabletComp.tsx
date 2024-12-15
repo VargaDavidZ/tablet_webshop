@@ -58,7 +58,7 @@ export default function NewTablet() {
     }
     return <>
 
-        <div className="container" >
+        <div className="container mainBody" >
             <MainMenu></MainMenu>
             <h2>Tablet Felvetele</h2>
             <form onSubmit={handleSubmit}>

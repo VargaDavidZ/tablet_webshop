@@ -5,23 +5,39 @@ export function MainMenu() {
 
     return (
         <>
-            <div className='text-center mt-3 ' >
 
-                <div className='row' >
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/">Best Webshop</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                          
 
-                    <div className="col-sm-3"> <a href="/">Főoldal</a></div>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/tablets">Tabletek</a>
+                            </li>
 
-                    <div className="col-sm-3"> <a href="/tablets">Tabletek</a></div>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/addtablet">Tablet felvétele</a>
+                            </li>
 
-                    <div className="col-sm-3"> <a href="/addtablet">Tablet Felvétele</a> </div>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/deletetablet">Tablet törlése</a>
+                            </li>
 
-                    <div className="col-sm-3"> <a href="/deletetablet">Tablet Törlése</a></div>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/cart">Kosár</a>
+                            </li>
 
+                        </ul>
+                    </div>
                 </div>
+            </nav>
 
 
-
-            </div>
 
         </>
     )
