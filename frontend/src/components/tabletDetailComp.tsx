@@ -23,6 +23,7 @@ export function TabletDetail() {
                     setErrorServer("Resource not found (404)");
                 }
                 if (!res.ok) {
+                    
                     setErrorServer(`Server responded with status ${res.status}`);
                 }
                 return res.json();

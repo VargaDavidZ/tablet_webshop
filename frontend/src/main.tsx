@@ -9,6 +9,11 @@ import { TabletDetail } from './components/tabletDetailComp.tsx';
 import NewTablet from './components/newTabletComp.tsx';
 import DeleteTablet from './components/deleteTabletComp.tsx';
 import TopListed from './components/topListed.tsx';
+import Register from './components/registerComp.tsx';
+import Login from './components/loginComp.tsx';
+import Protected from './components/protected.tsx';
+import Logout from './components/logoutComp.tsx';
+import { Cart } from './components/cartComp.tsx';
 
 
 const router = createBrowserRouter([
@@ -31,6 +36,22 @@ const router = createBrowserRouter([
   {
     path:"/tablets/:tabletId",
     element: <TabletDetail/>
+  },
+  {
+    path:"/register",
+    element: <Register/>
+  },
+  {
+    path:"/login",
+    element: <Login/>
+  },
+  {
+    path:"/logout",
+    element: <Logout/>
+  },
+  {
+    path:"/cart",
+    element: <Cart/>
   }
 ]);
 

@@ -1,8 +1,12 @@
+
 import { Tablet } from "./tabletInterface";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export function Card(props: Tablet) {
 
+
+   
+    
     return (
         <>
             <div className="card my-3" style={{width:"100%"}} >
@@ -30,6 +34,8 @@ export function Card(props: Tablet) {
                     <p className="card-text"> {props.description}  </p>
                     <p className="card-text"> {props.price} Ft  </p>    
                     </div>
+
+                   
                         
                     </div>
             </div>
