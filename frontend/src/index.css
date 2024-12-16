@@ -4,3 +4,12 @@
   margin-top: 5px;
 }
 
+
+.card:hover{
+
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px rgb(61, 61, 61) !important;
+  border-radius: 5px;
+
+}
+
