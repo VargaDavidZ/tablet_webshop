@@ -44,6 +44,10 @@ export function MainMenu() {
                                 <a className="nav-link active" aria-current="page" href="/profil">Profil</a>
                             </li>
 
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/logout">Kijelentkezés</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

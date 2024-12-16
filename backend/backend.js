@@ -5,6 +5,7 @@ const MySQLStore = require('express-mysql-session')(session);
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise');
+const { userInfo } = require('os');
 
 
 const db = mysql.createPool({
@@ -252,6 +253,51 @@ app.get('/tablets', async (req, res) => {
 })
 
 
+app.put('/users/:userId', async(req,res) =>{
+
+  try{
+    let newName = req.body.newName
+    console.log(newName + "--")
+    let userId = parseInt(req.params.userId);
+    console.log(userId)
+    const temp = await db.query("UPDATE users SET username = ? WHERE id = ? ",newName.userId)
+  }
+  catch(err)
+  {
+    console.error("Szerver oldali hiba")
+  }
+})
+
+app.get('/users/:userId', async (req, res) => {
+
+  try {
+    let userId = parseInt(req.params.userId);
+    const temp = await db.query('SELECT * FROM users WHERE id = ?',userId);
+    const rows = temp[0];
+    const fields = temp[1];
+    res.status(200).json(rows);
+} catch (error) {
+    console.error(`Error retrieving tablets ${error}`);
+    res.status(500).json({ error: "Internal Server Error" });
+}
+
+})
+
+app.get('/users', async (req, res) => {
+
+  try {
+    const temp = await db.query('SELECT * FROM users');
+    const rows = temp[0];
+    const fields = temp[1];
+    res.status(200).json(rows);
+} catch (error) {
+    console.error(`Error retrieving tablets ${error}`);
+    res.status(500).json({ error: "Internal Server Error" });
+}
+
+})
+
+
 // Kijelentkezési végpont
 app.post('/logout', (req, res) => {
   req.session.destroy(err => {
@@ -268,7 +314,7 @@ app.get('/profil', (req, res) => {
   if (!req.session.user) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
-  res.json({ message: `${req.session.user.username}` });
+  res.json({ message: `${req.session.user.username}`, id: `${req.session.user.id}`  });
 });
 
 

@@ -1,4 +1,5 @@
 interface ApiResponse {
+    id: string
     message: string; // Az API válaszainak struktúrája
   }
   
